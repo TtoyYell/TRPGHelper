@@ -12,8 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.URI;
-import java.net.URL;
 
 /**
  * 创建COC调查员角色卡工具类
@@ -56,7 +54,8 @@ public class CocRoleCreate {
 
         if (!file.exists()){
             // 如果输出文件夹不存在则创建
-            file.getParentFile().mkdir();
+            boolean isMkdir = file.getParentFile().mkdir();
+            System.out.println(isMkdir);
         }
         ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(file);
         // 写出图片
