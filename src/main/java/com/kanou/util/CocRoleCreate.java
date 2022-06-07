@@ -51,7 +51,8 @@ public class CocRoleCreate {
         String path = resource.getURL().getPath()
                 .replace(demoRoleFilename, "role_out/" + System.currentTimeMillis() + "COC" + id + ".png");
         File file = new File(path);
-        // 把文件路径存入db TODO
+        // 把文件路径存入db
+        // TODO
 
         if (!file.exists()){
             // 如果输出文件夹不存在则创建
