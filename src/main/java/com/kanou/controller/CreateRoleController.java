@@ -1,13 +1,8 @@
-package com.kanou.control;
+package com.kanou.controller;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kanou.entity.CocRole;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * 创建调查员请求
