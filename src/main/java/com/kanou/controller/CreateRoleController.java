@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
  * @version 1.0
  * @date 2022/5/23 20:33
  */
-// 如果所有的请求返回都是responsebody的话 可以用@RestController注解
 @Controller
 @RequestMapping("/coc")
 public class CreateRoleController {
@@ -20,6 +19,5 @@ public class CreateRoleController {
     public String createRole(@RequestBody CocRole role){
         return "hello";
     }
-
 
 }
