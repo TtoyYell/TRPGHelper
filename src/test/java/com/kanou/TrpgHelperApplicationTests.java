@@ -14,7 +14,8 @@ class TrpgHelperApplicationTests{
 	@Test
 	void contextLoads() throws IOException {
 		CocRole cocRole = new CocRole();
-		cocRole.setPcName("乔纳森");
+		cocRole.setPlName("乔纳森");
+		cocRole.setPcName("杰西卡");
 		CocRoleCreate.getImageByRole(cocRole,1);
 	}
 

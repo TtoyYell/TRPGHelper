@@ -41,9 +41,9 @@ public class CocRoleCreate {
         // 设为黑色
         pen.setColor(Color.BLACK);
         // 设置字体
-        pen.setFont(new Font(null, Font.BOLD,16));
+        pen.setFont(new Font(null, Font.BOLD,15));
         // 写入文字
-        pen.drawString(role.getPcName(), CoordinateConstant.PL_NAME[0], CoordinateConstant.PL_NAME[1]);
+        draw(pen,role);
 
         // 创建输出路径和字符输出流
         String path = resource.getURL().getPath()
@@ -55,11 +55,21 @@ public class CocRoleCreate {
         if (!file.exists()){
             // 如果输出文件夹不存在则创建
             boolean isMkdir = file.getParentFile().mkdir();
-            System.out.println(isMkdir);
+            System.out.println(isMkdir ? "已存在输出文件夹" : "创建输出文件夹");
         }
         ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(file);
         // 写出图片
         ImageIO.write(image,"png",imageOutputStream);
         return image;
+    }
+
+    /**
+     * 把调查员信息画到纸上
+     * @param pen 画笔
+     * @param role 调查员信息
+     * */
+    private static void draw(Graphics2D pen, CocRole role) {
+        pen.drawString(role.getPlName(), CoordinateConstant.PL_NAME[0], CoordinateConstant.PL_NAME[1]);
+        pen.drawString(role.getPcName(), CoordinateConstant.PC_NAME[0], CoordinateConstant.PC_NAME[1]);
     }
 }
