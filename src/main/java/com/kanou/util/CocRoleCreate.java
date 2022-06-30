@@ -41,7 +41,7 @@ public class CocRoleCreate {
         // 设为黑色
         pen.setColor(Color.BLACK);
         // 设置字体
-        pen.setFont(new Font(null, Font.BOLD,15));
+        pen.setFont(new Font(null, Font.BOLD,35));
         // 写入文字
         draw(pen,role);
 
@@ -52,10 +52,9 @@ public class CocRoleCreate {
         // 把文件路径存入db
         // TODO
 
-        if (!file.exists()){
+        if (!file.getParentFile().exists()){
             // 如果输出文件夹不存在则创建
-            boolean isMkdir = file.getParentFile().mkdir();
-            System.out.println(isMkdir ? "已存在输出文件夹" : "创建输出文件夹");
+            System.out.println(file.getParentFile().mkdir()?"创建文件夹":"文件夹已存在");
         }
         ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(file);
         // 写出图片
