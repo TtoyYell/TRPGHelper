@@ -46,10 +46,10 @@ public class RestFulTestController {
     }
 
     // 参数用多个likes为key 就可以传进来
-    @GetMapping(value = "/testarray")
-    public String testarray(String[] likes) {
-        return Arrays.toString(likes);
-    }
+//    @GetMapping(value = "/testarray")
+//    public String testarray(String[] likes) {
+//        return Arrays.toString(likes);
+//    }
 
     // 集合是一个引用类型 不像数组 需要加@RequestParam注解 就能接到参数 仅限于非json格式
     @GetMapping(value = "/testlist")

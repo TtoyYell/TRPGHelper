@@ -9,9 +9,9 @@ package com.kanou.constant;
 public class CoordinateConstant {
 
     /** 玩家名称坐标 */
-    public static int[] PL_NAME = {234 , 316};
+    public static int[] PL_NAME = {239 , 316};
 
     /** 调配员名称坐标 */
-    public static int[] PC_NAME = {234 , 370};
+    public static int[] PC_NAME = {239 , 369};
 
 }
