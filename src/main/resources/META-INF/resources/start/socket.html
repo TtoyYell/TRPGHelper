@@ -11,7 +11,7 @@
 <p>【toUserId】：<div><input id="contentText" name="contentText" type="text" value="hello websocket"></div>
 <p>【操作】：<div>
     <button onclick="openSocket()">开启socket</button></div>
-<p>【操作】：<div><button onclick="sendMessage()">发送消息</button></button></div>
+<p>【操作】：<div><button onclick="sendMessage()">发送消息</button></div>
 </body>
 <script>
     var socket;
@@ -38,7 +38,7 @@
             };
             //获得消息事件
             socket.onmessage = function(msg) {
-                console.log(msg.data);
+                console.log("收到消息" + msg.data);
                 //发现消息进入    开始处理前端触发逻辑
             };
             //关闭事件
