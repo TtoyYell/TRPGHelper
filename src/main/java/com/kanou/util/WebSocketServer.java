@@ -1,5 +1,6 @@
 package com.kanou.util;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.junit.platform.commons.util.StringUtils;
@@ -20,28 +21,37 @@ import java.util.concurrent.ConcurrentHashMap;
 @Component
 public class WebSocketServer {
 
-    static Log log= LogFactory.getLog(WebSocketServer.class);
     /**静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。*/
     private static int onlineCount = 0;
-    /**concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。*/
+
+    /**
+     * concurrent包的线程安全Set，用来存放每个客户端对应的MyWebSocket对象。
+     * key是使用该端点的用户id,value是WebSocketServer这个端点本身
+     * */
     private static final ConcurrentHashMap<String,WebSocketServer> webSocketMap = new ConcurrentHashMap<>();
+
+    static Log log= LogFactory.getLog(WebSocketServer.class);
+
     /**与某个客户端的连接会话，需要通过它来给客户端发送数据*/
     private Session session;
+
     /**接收userId*/
     private String userId="";
+
     /**
-     * 连接建立成功调用的方法*/
+     * 连接建立成功调用的方法
+     * */
     @OnOpen
     public void onOpen(Session session,@PathParam("userId") String userId) {
         this.session = session;
         this.userId=userId;
         if(webSocketMap.containsKey(userId)){
             webSocketMap.remove(userId);
-            webSocketMap.put(userId,this);
             //加入set中
+            webSocketMap.put(userId,this);
         }else{
-            webSocketMap.put(userId,this);
             //加入set中
+            webSocketMap.put(userId,this);
             addOnlineCount();
             //在线数加1
         }
@@ -74,7 +84,9 @@ public class WebSocketServer {
      * @param message 客户端发送过来的消息*/
     @OnMessage
     public void onMessage(String message, Session session) {
-        log.info("用户消息:"+userId+",报文:"+message);
+        log.info("用户消息:  用户id"+userId+",报文:"+message);
+        ObjectMapper objectMapper = new ObjectMapper();
+
     }
 
     /**
@@ -92,6 +104,7 @@ public class WebSocketServer {
         log.error("用户错误:"+this.userId+",原因:"+error.getMessage());
         error.printStackTrace();
     }
+
     /**
      * 实现服务器主动推送
      */
