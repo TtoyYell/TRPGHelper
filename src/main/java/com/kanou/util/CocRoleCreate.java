@@ -41,7 +41,7 @@ public class CocRoleCreate {
         // 设为黑色
         pen.setColor(Color.BLACK);
         // 设置字体
-        pen.setFont(new Font(null, Font.BOLD,15));
+        pen.setFont(new Font(null, Font.BOLD,40));
         // 写入文字
         draw(pen,role);
 
@@ -49,13 +49,14 @@ public class CocRoleCreate {
         String path = resource.getURL().getPath()
                 .replace(demoRoleFilename, "role_out/" + System.currentTimeMillis() + "COC" + id + ".png");
         File file = new File(path);
+        System.out.println(path);
         // 把文件路径存入db
         // TODO
 
         if (!file.exists()){
             // 如果输出文件夹不存在则创建
             boolean isMkdir = file.getParentFile().mkdir();
-            System.out.println(isMkdir ? "已存在输出文件夹" : "创建输出文件夹");
+            System.out.println(isMkdir ? "创建输出文件夹" : "已存在输出文件夹");
         }
         ImageOutputStream imageOutputStream = ImageIO.createImageOutputStream(file);
         // 写出图片
