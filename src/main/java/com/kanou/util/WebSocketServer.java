@@ -1,15 +1,16 @@
 package com.kanou.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.SneakyThrows;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.junit.platform.commons.util.StringUtils;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.*;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -81,12 +82,29 @@ public class WebSocketServer {
     /**
      * 收到客户端消息后调用的方法
      *
-     * @param message 客户端发送过来的消息*/
+     * @param message 客户端发送过来的消息
+     * */
+    @SneakyThrows
     @OnMessage
-    public void onMessage(String message, Session session) {
+    public void onMessage(String message, Session session){
         log.info("用户消息:  用户id"+userId+",报文:"+message);
         ObjectMapper objectMapper = new ObjectMapper();
-
+        Map<String, String> map = objectMapper.readValue(message, Map.class);
+        //可以群发消息
+        //消息保存到数据库、redis
+        if(StringUtils.isNotBlank(message)) {
+            //追加发送人(防止串改)
+            map.put("fromUserId",this.userId);
+            String toUserId=map.get("toUserId");
+            //传送给对应toUserId用户的websocket
+            if(StringUtils.isNotBlank(toUserId)&&webSocketMap.containsKey(toUserId)){
+                webSocketMap.get(toUserId).sendMessage(objectMapper.writeValueAsString(map));
+                webSocketMap.get(toUserId).sendMessage("我是服务器，我已收到消息");
+            }else{
+                log.error("请求的userId:"+toUserId+"不在该服务器上");
+                //否则不在这个服务器上，发送到mysql或者redis
+            }
+        }
     }
 
     /**
