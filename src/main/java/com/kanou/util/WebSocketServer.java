@@ -99,7 +99,7 @@ public class WebSocketServer {
             //传送给对应toUserId用户的websocket
             if(StringUtils.isNotBlank(toUserId)&&webSocketMap.containsKey(toUserId)){
                 webSocketMap.get(toUserId).sendMessage(objectMapper.writeValueAsString(map));
-                webSocketMap.get(toUserId).sendMessage("我是服务器，我已收到消息");
+                webSocketMap.get(toUserId).sendMessage("我是服务器，我已收到消息，已经把消息发送给用户:"+toUserId);
             }else{
                 log.error("请求的userId:"+toUserId+"不在该服务器上");
                 //否则不在这个服务器上，发送到mysql或者redis
