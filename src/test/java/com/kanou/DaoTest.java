@@ -23,7 +23,7 @@ import java.util.stream.Collectors;
  * @version 1.0
  * @date 2022/5/24 0:55
  */
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class DaoTest {
 
     @Autowired

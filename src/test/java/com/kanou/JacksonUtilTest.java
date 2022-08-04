@@ -3,6 +3,7 @@ package com.kanou;
 import com.kanou.entity.User;
 import com.kanou.util.JacksonUtil;
 import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022/7/1 16:30
  */
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class JacksonUtilTest {
     @Test
     public void testJson(){
