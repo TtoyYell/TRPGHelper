@@ -1,6 +1,7 @@
-package com.kanou.util;
+package com.kanou.server;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.kanou.util.StringUtils;
 import lombok.SneakyThrows;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -98,8 +99,9 @@ public class WebSocketServer {
             String toUserId=map.get("toUserId");
             //传送给对应toUserId用户的websocket
             if(StringUtils.isNotBlank(toUserId)&&webSocketMap.containsKey(toUserId)){
+                // 发送
                 webSocketMap.get(toUserId).sendMessage(objectMapper.writeValueAsString(map));
-                webSocketMap.get(toUserId).sendMessage("我是服务器，我已收到消息");
+                log.info("服务器消息，已经把用户:"+this.userId+" 的消息发送给用户:"+toUserId);
             }else{
                 log.error("请求的userId:"+toUserId+"不在该服务器上");
                 //否则不在这个服务器上，发送到mysql或者redis

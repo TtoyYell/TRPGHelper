@@ -19,7 +19,7 @@ public class JacksonUtil {
 
     static ObjectMapper mapper = new ObjectMapper();
 
-    static Log log= LogFactory.getLog(WebSocketServer.class);
+    static Log log= LogFactory.getLog(JacksonUtil.class);
 
     /**
      * json字符串转成list
