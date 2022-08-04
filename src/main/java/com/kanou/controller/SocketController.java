@@ -1,6 +1,6 @@
 package com.kanou.controller;
 
-import com.kanou.util.WebSocketServer;
+import com.kanou.server.WebSocketServer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
