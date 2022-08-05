@@ -1,0 +1,28 @@
+.role_border {
+    float: left;
+    border-radius: 15px;
+    background: rgba(167, 99, 5, 0.1);
+    width: 70%;
+    margin: 1% 15% 1% 15%;
+}
+
+.line {
+    float: left;
+    width: 27%;
+    margin: 1%;
+    padding: 2%;
+}
+
+.line > div {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+    display: block;
+    margin-top: 5%;
+    padding: 5%;
+}
+
+b {
+    font-size: xx-large;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
