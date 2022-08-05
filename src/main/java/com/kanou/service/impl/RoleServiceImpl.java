@@ -1,6 +1,7 @@
 package com.kanou.service.impl;
 
 import com.kanou.service.RoleService;
+import com.kanou.util.DiceUtil;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -13,21 +14,25 @@ import java.util.*;
 @Service
 public class RoleServiceImpl implements RoleService {
 
+    /**
+     * 随机获取一组属性
+     * @param seed 随机种子
+     * */
     @Override
     public Map randomRole(Long seed) throws Exception {
 
         Map<String, String> resMap = new LinkedHashMap<>();
 
         Random random = new Random(seed);
-        resMap.put("力量", String.valueOf((random.nextInt(6) + 1) * 3 * 5));
-        resMap.put("敏捷", String.valueOf((random.nextInt(6) + 1) * 3 * 5));
-        resMap.put("体质", String.valueOf((random.nextInt(6) + 1) * 3 * 5));
-        resMap.put("外貌", String.valueOf((random.nextInt(6) + 1) * 3 * 5));
-        resMap.put("意志", String.valueOf((random.nextInt(6) + 1) * 3 * 5));
+        resMap.put("力量", DiceUtil.nD6mul5(random, 3));
+        resMap.put("敏捷", DiceUtil.nD6mul5(random, 3));
+        resMap.put("体质", DiceUtil.nD6mul5(random, 3));
+        resMap.put("外貌", DiceUtil.nD6mul5(random, 3));
+        resMap.put("意志", DiceUtil.nD6mul5(random, 3));
 
-        resMap.put("体型", String.valueOf(((random.nextInt(6) + 1) * 2 + 6) * 5));
-        resMap.put("教育", String.valueOf(((random.nextInt(6) + 1) * 2 + 6) * 5));
-        resMap.put("智力", String.valueOf(((random.nextInt(6) + 1) * 2 + 6) * 5));
+        resMap.put("体型", DiceUtil.nD6mul5Plus(random, 2, 30));
+        resMap.put("教育", DiceUtil.nD6mul5Plus(random, 2, 30));
+        resMap.put("智力", DiceUtil.nD6mul5Plus(random, 2, 30));
         return resMap;
     }
 }
