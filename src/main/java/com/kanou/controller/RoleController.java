@@ -38,11 +38,11 @@ public class RoleController {
 
     @GetMapping(value = "/randomRole")
     @SneakyThrows
-    public List<Map> randomRole() {
+    public List<Map> randomRole(int quantity) {
         ArrayList<Map> res = new ArrayList<>();
         Date date = new Date();
         Long seed = Long.parseLong(String.format("%tN", date));
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < quantity; i++) {
             res.add(roleService.randomRole(seed));
             seed++;
         }

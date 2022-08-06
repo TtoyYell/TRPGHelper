@@ -3,14 +3,14 @@
     border-radius: 15px;
     background: rgba(167, 99, 5, 0.1);
     width: 70%;
-    margin: 1% 15% 1% 15%;
+    margin: 1% 15% 2% 15%;
 }
 
 .line {
     float: left;
-    width: 27%;
+    width: 31%;
     margin: 1%;
-    padding: 2%;
+    padding: 1%;
 }
 
 .line > div {
@@ -25,4 +25,28 @@ b {
     font-size: xx-large;
     margin-top: 2%;
     margin-bottom: 2%;
+}
+
+.cool {
+    background: rgb(160, 160, 160);
+}
+
+.cool:hover {
+    background: rgb(0, 0, 0);
+}
+
+.center {
+    width: 65%;
+    margin: 0 auto; 
+	text-align:center;
+}
+
+.form-group > label {
+    width: 25%;
+}
+.form-group > input {
+    width: 25%;
+}
+.form-group > button {
+    width: 20%;
 }
