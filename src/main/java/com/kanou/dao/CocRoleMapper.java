@@ -2,7 +2,6 @@ package com.kanou.dao;
 
 import com.kanou.entity.CocRole;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -12,7 +11,6 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 @Repository
-public interface CocRoleDao {
-    @Select("select * from COC_ROLE where id = #{id}")
+public interface CocRoleMapper {
     CocRole getById(Integer id);
 }

@@ -1,22 +1,11 @@
 package com.kanou;
 
-import com.alibaba.druid.pool.DruidDataSource;
-import com.kanou.dao.CocRoleDao;
 import com.kanou.entity.CocRole;
+import com.kanou.service.TestService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
 
-import javax.annotation.security.RunAs;
-import javax.sql.DataSource;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * @author YeTianyi
@@ -27,18 +16,11 @@ import java.util.stream.Collectors;
 public class DaoTest {
 
     @Autowired
-    DataSource dataSource;
-
-    @Autowired
-    CocRoleDao cocRoleDao;
+    TestService service;
 
     @Test
-    public void test() throws SQLException {
-        Connection connection = dataSource.getConnection();
-        CocRole cocRole = cocRoleDao.getById(1);
+    public void test() {
+        CocRole cocRole = service.getCocRole();
         System.out.println(cocRole);
-        connection.close();
     }
-
-
 }
