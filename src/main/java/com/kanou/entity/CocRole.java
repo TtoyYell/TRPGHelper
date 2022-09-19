@@ -1,6 +1,8 @@
 package com.kanou.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * COC调查员角色卡
@@ -9,6 +11,8 @@ import lombok.Data;
  * @date  2022/5/23 19:47
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class CocRole {
     /** 角色卡id */
     String id;

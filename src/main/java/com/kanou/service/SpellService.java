@@ -1,8 +1,7 @@
 package com.kanou.service;
 
 import com.kanou.entity.ResponseResult;
-
-import java.util.Map;
+import com.kanou.entity.Spell;
 
 /**
  * @author Ye Tianyi
@@ -11,5 +10,7 @@ import java.util.Map;
  */
 public interface SpellService {
 
-    ResponseResult addSpell(Map condition);
+    ResponseResult addSpell(Spell condition);
+
+    ResponseResult querySpell(Integer id);
 }

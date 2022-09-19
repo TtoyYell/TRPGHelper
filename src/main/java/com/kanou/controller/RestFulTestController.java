@@ -3,6 +3,7 @@ package com.kanou.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kanou.entity.CocRole;
+import io.swagger.annotations.Api;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
@@ -13,6 +14,7 @@ import java.util.List;
  * @version 1.0
  * @date 2022/5/28 1:15
  */
+@Api(tags = "RestFul测试")
 @RestController
 @RequestMapping("/rest")
 public class RestFulTestController {

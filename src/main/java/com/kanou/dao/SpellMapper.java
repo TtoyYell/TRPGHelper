@@ -1,9 +1,8 @@
 package com.kanou.dao;
 
+import com.kanou.entity.Spell;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
-
-import java.util.Map;
 
 /**
  * @author Ye Tianyi
@@ -14,5 +13,7 @@ import java.util.Map;
 @Repository
 public interface SpellMapper {
 
-    Integer addSpell(Map condition);
+    Integer addSpell(Spell condition);
+
+    Spell querySpell(Integer id);
 }

@@ -4,6 +4,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kanou.entity.CocRole;
 import com.kanou.service.RoleService;
 import com.kanou.util.IPUtil;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import lombok.SneakyThrows;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -24,6 +26,7 @@ import java.util.Map;
  * @version 1.0
  * @date 2022/5/28 20:41
  */
+@Api(tags = "角色控制类")
 @RestController
 @RequestMapping("/role")
 @CrossOrigin
@@ -42,6 +45,7 @@ public class RoleController {
         return res;
     }
 
+    @ApiOperation(value = "随机角色")
     @GetMapping(value = "/randomRole")
     @SneakyThrows
     public List<Map> randomRole(int quantity, HttpServletRequest request) {

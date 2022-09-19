@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kanou.dao.SpellMapper">
-    <select id="getById" parameterType="Spell">
+    <insert id="addSpell" parameterType="Spell">
         insert into SPELL
         (NAME_ENG,
          NAME_CHA,
@@ -14,7 +14,20 @@
          RING_NUM)
         values
         (
-
+            #{nameEng},
+            #{nameCha},
+            #{type},
+            #{costTime},
+            #{distance},
+            #{components},
+            #{duration},
+            #{description},
+            #{ringNum}
         )
+    </insert>
+
+    <select id="querySpell" resultType="Spell">
+        select * from SPELL where id = #{id}
     </select>
+
 </mapper>
