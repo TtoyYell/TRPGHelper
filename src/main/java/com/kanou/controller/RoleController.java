@@ -35,6 +35,9 @@ public class RoleController {
     @Autowired
     RoleService roleService;
 
+    @Autowired
+    HttpServletRequest request;
+
     Log log= LogFactory.getLog(RoleController.class);
 
     @GetMapping(value = "/home")
@@ -48,7 +51,7 @@ public class RoleController {
     @ApiOperation(value = "随机角色")
     @GetMapping(value = "/randomRole")
     @SneakyThrows
-    public List<Map> randomRole(int quantity, HttpServletRequest request) {
+    public List<Map> randomRole(Integer quantity) {
         log.info("===============IP:"+IPUtil.getIpAddr(request));
         ArrayList<Map> res = new ArrayList<>();
         Date date = new Date();
