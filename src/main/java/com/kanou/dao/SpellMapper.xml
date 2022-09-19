@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanou.dao.SpellMapper">
+    <select id="getById" parameterType="Spell">
+        insert into SPELL
+        (NAME_ENG,
+         NAME_CHA,
+         TYPE,
+         COST_TIME,
+         DISTANCE,
+         COMPONENTS,
+         DURATION,
+         DESCRIPTION,
+         RING_NUM)
+        values
+        (
+
+        )
+    </select>
+</mapper>
