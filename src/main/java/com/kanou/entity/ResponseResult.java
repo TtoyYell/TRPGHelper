@@ -45,7 +45,7 @@ public class ResponseResult<T> implements Serializable {
     public synchronized static <T> ResponseResult<T> setRes(ResponseCode responseCode, T data, Integer count){
         ResponseResult<T> responseResult = new ResponseResult<>();
         responseResult.setCode(responseCode.code);
-        responseResult.setMsg(responseResult.msg);
+        responseResult.setMsg(responseCode.msg);
         responseResult.setResult(data);
         responseResult.setCount(count);
         return responseResult;

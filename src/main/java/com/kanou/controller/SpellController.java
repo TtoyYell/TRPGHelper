@@ -1,12 +1,16 @@
 package com.kanou.controller;
 
+import com.kanou.constant.ResponseCode;
 import com.kanou.entity.ResponseResult;
 import com.kanou.entity.Spell;
 import com.kanou.service.SpellService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 /**
  * @author Ye Tianyi
@@ -24,7 +28,9 @@ public class SpellController {
 
     @ApiOperation(value = "增加法术")
     @PostMapping("/addSpell")
-    public ResponseResult addSpell(@RequestBody Spell condition){
+    public ResponseResult addSpell(@Valid @RequestBody Spell condition, BindingResult results){
+        if (results.hasErrors())
+            return ResponseResult.setRes(ResponseCode.EMPTY,results.getFieldError().getDefaultMessage());
         return service.addSpell(condition);
     }
 

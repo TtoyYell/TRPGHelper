@@ -12,7 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public enum ResponseCode {
 
-    OK(200,"成功");
+    OK(200,"成功"),
+
+    EMPTY(400,"参数为空");
 
     public Integer code;
 
