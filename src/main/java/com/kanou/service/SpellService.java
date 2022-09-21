@@ -12,5 +12,5 @@ public interface SpellService {
 
     ResponseResult addSpell(Spell condition);
 
-    ResponseResult querySpell(Integer id);
+    ResponseResult querySpell(String name);
 }

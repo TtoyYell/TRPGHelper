@@ -36,8 +36,8 @@ public class SpellController {
 
     @ApiOperation(value = "查询法术")
     @GetMapping("/querySpell")
-    public ResponseResult querySpell(Integer id){
-        return service.querySpell(id);
+    public ResponseResult querySpell(String name){
+        return service.querySpell(name);
     }
 
 }

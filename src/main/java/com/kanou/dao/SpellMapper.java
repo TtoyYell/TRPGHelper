@@ -4,6 +4,8 @@ import com.kanou.entity.Spell;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * @author Ye Tianyi
  * @version 1.0
@@ -15,5 +17,5 @@ public interface SpellMapper {
 
     Integer addSpell(Spell condition);
 
-    Spell querySpell(Integer id);
+    List<Spell> querySpell(String name);
 }

@@ -26,8 +26,22 @@
         )
     </insert>
 
-    <select id="querySpell" resultType="Spell">
-        select * from SPELL where id = #{id}
+<!--    <resultMap id="spellResult" type="Spell" >-->
+<!--        <result column="ID" property="id" jdbcType="INT" />-->
+<!--        <result column="NAME_CHA" property="nameCha" jdbcType="VARCHAR" />-->
+<!--        <result column="NAME_ENG" property="nameEng" jdbcType="VARCHAR" />-->
+<!--        <result column="TYPE" property="type" jdbcType="VARCHAR" />-->
+<!--        <result column="COST_TIME" property="costTime" jdbcType="VARCHAR" />-->
+<!--        <result column="DISTANCE" property="distance" jdbcType="VARCHAR" />-->
+<!--        <result column="COMPONENTS" property="components" jdbcType="VARCHAR" />-->
+<!--        <result column="DURATION" property="duration" jdbcType="VARCHAR" />-->
+<!--        <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />-->
+<!--        <result column="RING_NUM" property="ringNum" jdbcType="VARCHAR" />-->
+<!--    </resultMap>-->
+
+    <select id="querySpell" resultType="Spell" parameterType="java.lang.String">
+        select * from SPELL
+        where NAME_CHA like #{name} or NAME_ENG like #{name}
     </select>
 
 </mapper>
