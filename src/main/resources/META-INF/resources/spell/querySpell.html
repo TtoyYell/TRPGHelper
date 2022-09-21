@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询法术</title>
+    <script src='../dist/spell.min.js'></script>
+</head>
+<body>
+    <div id="mosttop" class="box_nav">
+        <ul class="list1">
+            <li>
+                <a href="querySpell.html">查询法术</a>
+            <li>
+                <a href="addSpell.html">增加法术</a>
+            </li>
+        </ul>
+    </div>
+    <div class="centerbox">
+        <div class="centerchid">
+
+            <div class="search">
+                <input placeholder="法术中文名或英文名" type="text" class="searchtext"/>
+                <input type="button" class="searchbtn" value="查询"/>
+            </div>
+            <div class="spellBox">
+            </div>
+            <div id="dialog" class="dialog">
+                <div id="title" class="dialog-title">
+                  弹窗
+                    <span id="closeBtn"><a>关闭</a></span>
+                </div>
+                <div class="dialog-content">
+                    
+                </div>
+                <div id="dialogBtn" class="dialog-button">
+                    <a>button</a>
+                </div>
+            </div>
+            <!-- 遮盖层 -->
+            <div id="bg" class="dialog-bg"></div>
+
+        </div>
+    </div>
+</body>
+</html>
