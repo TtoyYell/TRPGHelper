@@ -38,4 +38,11 @@ public class SpellServiceImpl implements SpellService {
         log.info(res.toString());
         return ResponseResult.setRes(ResponseCode.OK,res);
     }
+
+    @Override
+    public ResponseResult editSpell(Spell condition) {
+        condition.setDescription(condition.getDescription().replace("\n","\\n"));
+        Integer res = mapper.editSpell(condition);
+        return ResponseResult.setRes(ResponseCode.OK,res);
+    }
 }

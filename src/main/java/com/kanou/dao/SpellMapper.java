@@ -18,4 +18,6 @@ public interface SpellMapper {
     Integer addSpell(Spell condition);
 
     List<Spell> querySpell(String name);
+
+    Integer editSpell(Spell condition);
 }

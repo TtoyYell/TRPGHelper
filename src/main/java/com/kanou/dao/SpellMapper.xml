@@ -26,22 +26,24 @@
         )
     </insert>
 
-<!--    <resultMap id="spellResult" type="Spell" >-->
-<!--        <result column="ID" property="id" jdbcType="INT" />-->
-<!--        <result column="NAME_CHA" property="nameCha" jdbcType="VARCHAR" />-->
-<!--        <result column="NAME_ENG" property="nameEng" jdbcType="VARCHAR" />-->
-<!--        <result column="TYPE" property="type" jdbcType="VARCHAR" />-->
-<!--        <result column="COST_TIME" property="costTime" jdbcType="VARCHAR" />-->
-<!--        <result column="DISTANCE" property="distance" jdbcType="VARCHAR" />-->
-<!--        <result column="COMPONENTS" property="components" jdbcType="VARCHAR" />-->
-<!--        <result column="DURATION" property="duration" jdbcType="VARCHAR" />-->
-<!--        <result column="DESCRIPTION" property="description" jdbcType="VARCHAR" />-->
-<!--        <result column="RING_NUM" property="ringNum" jdbcType="VARCHAR" />-->
-<!--    </resultMap>-->
-
     <select id="querySpell" resultType="Spell" parameterType="java.lang.String">
         select * from SPELL
         where NAME_CHA like #{name} or NAME_ENG like #{name}
     </select>
 
+    <update id="editSpell" parameterType="Spell">
+        update SPELL
+            <set>
+                <if test="nameEng!=null and nameEng!=''">NAME_ENG = #{nameEng},</if>
+                <if test="nameCha!=null and nameCha!=''">NAME_CHA = #{nameCha},</if>
+                <if test="type!=null and type!=''">TYPE = #{type},</if>
+                <if test="costTime!=null and costTime!=''">COST_TIME = #{costTime},</if>
+                <if test="distance!=null and distance!=''">DISTANCE = #{distance},</if>
+                <if test="components!=null and components!=''">COMPONENTS = #{components},</if>
+                <if test="duration!=null and duration!=''">DURATION = #{duration},</if>
+                <if test="description!=null and description!=''">DESCRIPTION = #{description},</if>
+                <if test="ringNum!=null and ringNum!=''">RING_NUM = #{ringNum},</if>
+            </set>
+        where ID = #{id}
+    </update>
 </mapper>

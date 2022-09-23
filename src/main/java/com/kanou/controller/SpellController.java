@@ -40,4 +40,11 @@ public class SpellController {
         return service.querySpell(name);
     }
 
+    @ApiOperation(value = "根据id编辑法术")
+    @PostMapping("/editSpell")
+    public ResponseResult editSpell(@Valid @RequestBody Spell condition, BindingResult results){
+        if (results.hasErrors())
+            return ResponseResult.setRes(ResponseCode.EMPTY,results.getFieldError().getDefaultMessage());
+        return service.editSpell(condition);
+    }
 }

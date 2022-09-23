@@ -13,4 +13,6 @@ public interface SpellService {
     ResponseResult addSpell(Spell condition);
 
     ResponseResult querySpell(String name);
+
+    ResponseResult editSpell(Spell condition);
 }
