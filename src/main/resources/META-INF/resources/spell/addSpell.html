@@ -27,7 +27,7 @@
         </div>
         <div>
             <input id="components" type="text" class="in" placeholder="法术成分"/>
-            <input id="costTime" type="text" class="in" placeholder="施法时间"/>
+            <input id="costTime" type="text" class="in" placeholder="施法时间" list="costlist"/>
         </div>
         <div class="notextend">
             <div class="hidecheck">
@@ -40,8 +40,8 @@
             </div>
         </div>
         <div>
-            <input id="distance" type="text" class="in" placeholder="施法距离(尺)"/>
-            <input id="duration" type="text" class="in" placeholder="持续时间"/>
+            <input id="distance" type="text" class="in" placeholder="施法距离(尺)" list="distanceList"/>
+            <input id="duration" type="text" class="in" placeholder="持续时间" list="durationList"/>
         </div>
         <div>
             <textarea id="description" class="inarea" placeholder="请输入法术具体描述"></textarea>
@@ -60,7 +60,29 @@
             <option>附魔</option><option>变化</option><option>防护</option>
             <option>死灵</option><option>预言</option>
         </datalist>
+        <datalist id="costlist">
+            <option>1动作</option>
+            <option>1分钟</option>
+        </datalist>
+        <datalist id="distanceList">
+            <option>自身</option>
+            <option>自身（半径 尺）</option>
+            <option>自身（半径 里）</option>
+            <option>30尺</option>
+            <option>60尺</option>
+            <option>90尺</option>
+            <option>150尺</option>
+        </datalist>
+        <datalist id="durationList">
+            <option>立即</option>
+            <option>1分钟</option>
+            <option>1轮</option>
+            <option>专注，至多 1 分钟</option>
+            <option>专注，至多 10 分钟</option>
+            <option>专注，至多 1 小时</option>
+        </datalist>
     </div>
 </div>
+<div id="toast"></div>
 </body>
 </html>
