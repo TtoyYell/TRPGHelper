@@ -6,83 +6,83 @@
     <script src='../dist/spell.min.js'></script>
 </head>
 <body>
-<div id="mosttop" class="box_nav">
-    <ul class="list1">
-        <li>
-            <a href="querySpell.html">查询法术</a>
-        <li>
-            <a href="addSpell.html">增加法术</a>
-        </li>
-    </ul>
-</div>
-<div class="centerbox">
-    <div class="centerchid">
-        <div>
-            <input id="nameCha" type="text" class="in" placeholder="法术中文名"/>
-            <input id="nameEng" type="text" class="in" placeholder="法术英文名"/>
-        </div>
-        <div>
-            <input id="ringNum" type="text" class="in" placeholder="环阶" list="ringlist"/>
-            <input id="type" type="text" class="in" placeholder="分类" list="typelist"/>
-        </div>
-        <div>
+    <div id="mosttop" class="box_nav">
+        <ul class="list1">
+            <li>
+                <a href="querySpell.html">查询法术</a>
+            <li>
+                <a href="addSpell.html">增加法术</a>
+            </li>
+        </ul>
+    </div>
+    <div class="centerbox">
+        <div class="centerchid">
+            <div>
+                <input id="nameCha" type="text" class="in" placeholder="法术中文名"/>
+                <input id="nameEng" type="text" class="in" placeholder="法术英文名"/>
+            </div>
+            <div>
+                <input id="ringNum" type="text" class="in" placeholder="环阶" list="ringlist"/>
+                <input id="type" type="text" class="in" placeholder="分类" list="typelist"/>
+            </div>
+            <div>
             <input id="components" type="text" class="in" placeholder="法术成分"/>
             <input id="costTime" type="text" class="in" placeholder="施法时间" list="costlist"/>
-        </div>
-        <div class="notextend">
-            <div class="hidecheck">
-                <input id="V" class="checkinput" type="checkbox" value="V"><label for="V">V:言语</label>
-                <input id="S" class="checkinput" type="checkbox" value="S"><label for="S">S:姿势</label>
-                <input id="M" class="checkinput" type="checkbox" value="M（）"><label for="M">M:材料</label>
-                <input id="F" class="checkinput" type="checkbox" value="F"><label for="F">F:器材</label>
-                <input id="DF" class="checkinput" type="checkbox" value="DF"><label for="DF">DF:法器</label>
-                <input id="XP" class="checkinput" type="checkbox" value="XP"><label for="XP">XP:经验值</label>
             </div>
-        </div>
-        <div>
-            <input id="distance" type="text" class="in" placeholder="施法距离(尺)" list="distanceList"/>
-            <input id="duration" type="text" class="in" placeholder="持续时间" list="durationList"/>
-        </div>
-        <div>
-            <textarea id="description" class="inarea" placeholder="请输入法术具体描述"></textarea>
-        </div>
-        <div>
+            <div class="notextend">
+                <div class="hidecheck">
+                    <input id="V" class="checkinput" type="checkbox" value="V"><label for="V">V:言语</label>
+                    <input id="S" class="checkinput" type="checkbox" value="S"><label for="S">S:姿势</label>
+                    <input id="M" class="checkinput" type="checkbox" value="M（）"><label for="M">M:材料</label>
+                    <input id="F" class="checkinput" type="checkbox" value="F"><label for="F">F:器材</label>
+                    <input id="DF" class="checkinput" type="checkbox" value="DF"><label for="DF">DF:法器</label>
+                    <input id="XP" class="checkinput" type="checkbox" value="XP"><label for="XP">XP:经验值</label>
+                </div>
+            </div>
+            <div>
+                <input id="distance" type="text" class="in" placeholder="施法距离(尺)" list="distanceList"/>
+                <input id="duration" type="text" class="in" placeholder="持续时间" list="durationList"/>
+            </div>
+            <div>
+                <textarea id="description" class="inarea" placeholder="请输入法术具体描述"></textarea>
+            </div>
+            <div>
             <button class="btn">添加</button>
+            </div>
+    
+            <datalist id="ringlist">
+                <option>戏法</option><option>1环</option><option>2环</option><option>3环</option>
+                <option>4环</option><option>5环</option><option>6环</option><option>7环</option>
+                <option>8环</option><option>9环</option>
+            </datalist>
+            <datalist id="typelist">
+                <option>咒法</option><option>塑能</option><option>幻术</option>
+                <option>附魔</option><option>变化</option><option>防护</option>
+                <option>死灵</option><option>预言</option>
+            </datalist>
+            <datalist id="costlist">
+                <option>1动作</option>
+                <option>1分钟</option>
+            </datalist>
+            <datalist id="distanceList">
+                <option>自身</option>
+                <option>自身（半径 尺）</option>
+                <option>自身（半径 里）</option>
+                <option>30尺</option>
+                <option>60尺</option>
+                <option>90尺</option>
+                <option>150尺</option>
+            </datalist>
+            <datalist id="durationList">
+                <option>立即</option>
+                <option>1分钟</option>
+                <option>1轮</option>
+                <option>专注，至多 1 分钟</option>
+                <option>专注，至多 10 分钟</option>
+                <option>专注，至多 1 小时</option>
+            </datalist>
         </div>
-
-        <datalist id="ringlist">
-            <option>戏法</option><option>1环</option><option>2环</option><option>3环</option>
-            <option>4环</option><option>5环</option><option>6环</option><option>7环</option>
-            <option>8环</option><option>9环</option>
-        </datalist>
-        <datalist id="typelist">
-            <option>咒法</option><option>塑能</option><option>幻术</option>
-            <option>附魔</option><option>变化</option><option>防护</option>
-            <option>死灵</option><option>预言</option>
-        </datalist>
-        <datalist id="costlist">
-            <option>1动作</option>
-            <option>1分钟</option>
-        </datalist>
-        <datalist id="distanceList">
-            <option>自身</option>
-            <option>自身（半径 尺）</option>
-            <option>自身（半径 里）</option>
-            <option>30尺</option>
-            <option>60尺</option>
-            <option>90尺</option>
-            <option>150尺</option>
-        </datalist>
-        <datalist id="durationList">
-            <option>立即</option>
-            <option>1分钟</option>
-            <option>1轮</option>
-            <option>专注，至多 1 分钟</option>
-            <option>专注，至多 10 分钟</option>
-            <option>专注，至多 1 小时</option>
-        </datalist>
     </div>
-</div>
-<div id="toast"></div>
+    <div id="toast"></div>
 </body>
 </html>
