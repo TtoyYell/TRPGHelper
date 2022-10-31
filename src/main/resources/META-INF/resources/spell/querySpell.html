@@ -6,81 +6,81 @@
     <script src='../dist/spell.min.js'></script>
 </head>
 <body>
-<div id="mosttop" class="box_nav">
-    <ul class="list1">
-        <li>
-            <a href="querySpell.html">查询法术</a>
-        <li>
-            <a href="addSpell.html">增加法术</a>
-        </li>
-    </ul>
-</div>
-<div class="centerbox">
-    <div class="centerchid">
+    <div id="mosttop" class="box_nav">
+        <ul class="list1">
+            <li>
+                <a href="querySpell.html">查询法术</a>
+            <li>
+                <a href="addSpell.html">增加法术</a>
+            </li>
+        </ul>
+    </div>
+    <div class="centerbox">
+        <div class="centerchid">
 
-        <div class="search">
-            <input placeholder="法术中文名或英文名" type="text" class="searchtext"/>
-            <input type="button" class="searchbtn" value="查询"/>
-        </div>
-        <div class="spellBox">
-        </div>
-        <div id="dialog" class="dialog">
-            <div id="title" class="dialog-title">
-                编辑
-                <span id="closeBtn"><a>关闭</a></span>
+            <div class="search">
+                <input placeholder="法术中文名或英文名" type="text" class="searchtext"/>
+                <input type="button" class="searchbtn" value="查询"/>
             </div>
-            <div class="dialog-content">
-                <div class="centerchid">
-                    <div>
-                        <input id="nameCha" type="text" class="in" placeholder="法术中文名"/>
-                        <input id="nameEng" type="text" class="in" placeholder="法术英文名"/>
-                    </div>
-                    <div>
-                        <input id="ringNum" type="text" class="in" placeholder="环阶" list="ringlist"/>
-                        <input id="type" type="text" class="in" placeholder="分类" list="typelist"/>
-                    </div>
-                    <div>
+            <div class="spellBox waterfallBox">
+            </div>
+            <div id="dialog" class="dialog">
+                <div id="title" class="dialog-title">
+                  编辑
+                    <span id="closeBtn"><a>关闭</a></span>
+                </div>
+                <div class="dialog-content">
+                    <div class="centerchid">
+                        <div>
+                            <input id="nameCha" type="text" class="in" placeholder="法术中文名"/>
+                            <input id="nameEng" type="text" class="in" placeholder="法术英文名"/>
+                        </div>
+                        <div>
+                            <input id="ringNum" type="text" class="in" placeholder="环阶" list="ringlist"/>
+                            <input id="type" type="text" class="in" placeholder="分类" list="typelist"/>
+                        </div>
+                        <div>
                         <input id="components" type="text" class="in" placeholder="法术成分"/>
                         <input id="costTime" type="text" class="in" placeholder="施法时间"/>
-                    </div>
-                    <div class="notextend">
-                        <div class="hidecheck">
-                            <input id="V" class="checkinput" type="checkbox" value="V"><label for="V">V:言语</label>
-                            <input id="S" class="checkinput" type="checkbox" value="S"><label for="S">S:姿势</label>
-                            <input id="M" class="checkinput" type="checkbox" value="M（）"><label for="M">M:材料</label>
-                            <input id="F" class="checkinput" type="checkbox" value="F"><label for="F">F:器材</label>
-                            <input id="DF" class="checkinput" type="checkbox" value="DF"><label for="DF">DF:法器</label>
-                            <input id="XP" class="checkinput" type="checkbox" value="XP"><label for="XP">XP:经验值</label>
                         </div>
+                        <div class="notextend">
+                            <div class="hidecheck">
+                                <input id="V" class="checkinput" type="checkbox" value="V"><label for="V">V:言语</label>
+                                <input id="S" class="checkinput" type="checkbox" value="S"><label for="S">S:姿势</label>
+                                <input id="M" class="checkinput" type="checkbox" value="M（）"><label for="M">M:材料</label>
+                                <input id="F" class="checkinput" type="checkbox" value="F"><label for="F">F:器材</label>
+                                <input id="DF" class="checkinput" type="checkbox" value="DF"><label for="DF">DF:法器</label>
+                                <input id="XP" class="checkinput" type="checkbox" value="XP"><label for="XP">XP:经验值</label>
+                            </div>
+                        </div>
+                        <div>
+                            <input id="distance" type="text" class="in" placeholder="施法距离(尺)"/>
+                            <input id="duration" type="text" class="in" placeholder="持续时间"/>
+                        </div>
+                        <div>
+                            <textarea id="description" class="editinarea" placeholder="请输入法术具体描述"></textarea>
+                        </div>
+                
+                        <datalist id="ringlist">
+                            <option>戏法</option><option>1环</option><option>2环</option><option>3环</option>
+                            <option>4环</option><option>5环</option><option>6环</option><option>7环</option>
+                            <option>8环</option><option>9环</option>
+                        </datalist>
+                        <datalist id="typelist">
+                            <option>咒法</option><option>塑能</option><option>幻术</option>
+                            <option>附魔</option><option>变化</option><option>防护</option>
+                            <option>死灵</option><option>预言</option>
+                        </datalist>
                     </div>
-                    <div>
-                        <input id="distance" type="text" class="in" placeholder="施法距离(尺)"/>
-                        <input id="duration" type="text" class="in" placeholder="持续时间"/>
-                    </div>
-                    <div>
-                        <textarea id="description" class="editinarea" placeholder="请输入法术具体描述"></textarea>
-                    </div>
-
-                    <datalist id="ringlist">
-                        <option>戏法</option><option>1环</option><option>2环</option><option>3环</option>
-                        <option>4环</option><option>5环</option><option>6环</option><option>7环</option>
-                        <option>8环</option><option>9环</option>
-                    </datalist>
-                    <datalist id="typelist">
-                        <option>咒法</option><option>塑能</option><option>幻术</option>
-                        <option>附魔</option><option>变化</option><option>防护</option>
-                        <option>死灵</option><option>预言</option>
-                    </datalist>
+                </div>
+                <div id="dialogBtn" class="dialog-button">
+                    <a>修改</a>
                 </div>
             </div>
-            <div id="dialogBtn" class="dialog-button">
-                <a>修改</a>
-            </div>
+            <!-- 遮盖层 -->
+            <div id="bg" class="dialog-bg"></div>
+            <div id="toast"></div>
         </div>
-        <!-- 遮盖层 -->
-        <div id="bg" class="dialog-bg"></div>
-        <div id="toast"></div>
     </div>
-</div>
 </body>
 </html>
