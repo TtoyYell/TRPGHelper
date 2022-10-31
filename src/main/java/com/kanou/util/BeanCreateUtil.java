@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class BeanCreateUtil {
 
-    public Object registerBean(ConfigurableApplicationContext applicationContext, Class clazz, String name, Map<String,Object> argsMap){
+    public static Object registerBean(ConfigurableApplicationContext applicationContext, Class clazz, String name, Map<String,Object> argsMap){
 
         if (applicationContext.containsBean(name)) {
             Object bean = applicationContext.getBean(name);
