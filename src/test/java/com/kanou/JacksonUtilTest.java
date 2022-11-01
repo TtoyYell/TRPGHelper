@@ -19,7 +19,7 @@ public class JacksonUtilTest {
     public void testJson(){
         String json = "[" +
                 "{\"userId\":\"1\",\"userName\":\"上海带刀沪卫\",\"password\":\"带刀大佬\"}" +
-                ",{\"userId\":\"1\",\"userName\":\"上海辟谣专属队\",\"password\":\"职业辟谣，不信谣，不传谣，呵呵\"}" +
+                ",{\"userId\":\"1\",\"userName\":\"上海辟谣专属队\",\"password\":\"职业辟谣\"}" +
                 "]";
         System.out.println(json);
         List lists = JacksonUtil.jsonToList(json, User.class);

@@ -1,6 +1,7 @@
 package com.kanou.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.NonNull;
@@ -30,7 +31,9 @@ public class JacksonUtil {
      */
     public static <T> List<T> jsonToList(@NonNull String jsonString, Class<T> cls) {
         try {
-            return mapper.readValue(jsonString, getCollectionType(List.class, cls));
+            JavaType type = getCollectionType(List.class, cls);
+            return mapper.readValue(jsonString, type);
+//            return mapper.readValue(jsonString, new TypeReference<List<T>>() {});
         } catch (JsonProcessingException e) {
             String className = cls.getSimpleName();
             log.error("Jackson转换错误", e);
