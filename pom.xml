@@ -87,6 +87,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-websocket</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.netbeans.external/com-jcraft-jsch -->
+		<dependency>
+			<groupId>org.netbeans.external</groupId>
+			<artifactId>com-jcraft-jsch</artifactId>
+			<version>RELEASE160</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
