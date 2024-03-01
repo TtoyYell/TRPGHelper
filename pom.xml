@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.kanou</groupId>
 	<artifactId>trpg</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>TRPGHelper</name>
 	<description>none</description>
 	<properties>
@@ -25,6 +25,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- 打war包时加入此项， 告诉spring-boot tomcat相关jar包用外部的，不要打进去 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -93,6 +100,16 @@
 			<artifactId>com-jcraft-jsch</artifactId>
 			<version>RELEASE160</version>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.5.13</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpmime</artifactId>
+			<version>4.5.13</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>
@@ -116,8 +133,8 @@
                 <testFailureIgnore>true</testFailureIgnore>
             </configuration>
         </plugin>
-    </plugins>
-    <!-- 一定要加这个，要不然会一直报文件不存在-->
+    	</plugins>
+    	<!-- 一定要加这个，要不然会一直报文件不存在-->
 		<resources>
 			<resource>
 				<directory>src/main/java</directory>
@@ -132,5 +149,6 @@
 				</includes>
 			</resource>
 		</resources>
+		<finalName>trpg</finalName>
 	</build>
 </project>

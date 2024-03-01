@@ -5,6 +5,8 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.DefaultSingletonBeanRegistry;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import java.lang.reflect.Field;
@@ -15,7 +17,12 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @SpringBootApplication
-public class TrpgHelperApplication {
+public class TrpgHelperApplication extends SpringBootServletInitializer {
+
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+        return builder.sources(TrpgHelperApplication.class);
+    }
 
     public static void main(String[] args) throws Exception {
         ConfigurableApplicationContext context = SpringApplication.run(TrpgHelperApplication.class, args);
